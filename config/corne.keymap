@@ -508,12 +508,14 @@
          * FN – teclas de función F1-F12 y extras
          * Incluye controles Bluetooth en la fila de thumbs
          */
-                fn {
+        fn {
             label = "FN";
             bindings = <
- &kp F1     &kp F2       &kp F3         &kp F4   &kp F5        &kp F6   &kp F7   &kp F8   &kp F9   &kp F10
- &kp F11    &kp F12      &kp INS        &kp PSCR &kp SLCK      &kp PAUS &kp HOME &kp PG_UP &kp END &kp DEL
- &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1   &kp LCTRL &kp LALT &kp LSHFT
+ &kp F1   &kp F2   &kp F3   &kp F4   &kp F5        &kp F6   &kp F7   &kp F8   &kp F9   &kp F10
+ &kp F11  &kp F12  &kp INS  &kp PSCR &kp SLCK      &kp PAUS &kp HOME &kp PG_UP &kp END &kp DEL
+ &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp LCTRL &kp LALT
+
+ &trans &trans &trans &trans &trans &trans
             >;
         };
     };
