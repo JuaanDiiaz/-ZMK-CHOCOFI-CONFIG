@@ -1,6 +1,5 @@
 /*
  * Copyright (c) 2020 The ZMK Contributors
- *
  * SPDX-License-Identifier: MIT
  */
 
@@ -15,194 +14,15 @@
     chosen { zmk,matrix_transform = &five_column_transform; };
 
     behaviors {
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
+            quick-tap-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            quick-tap-ms = <200>;
-        };
-
-        vim_i: vim_i {
-            compatible = "zmk,behavior-mod-morph";
-            label = "VIM_I";
-            bindings = <&to 0>, <&vim_I>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        vim_o: vim_o {
-            compatible = "zmk,behavior-mod-morph";
-            label = "VIM_O";
-            bindings = <&next_line_enter>, <&previous_line_enter>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        vim_c_r: vim_c_r {
-            compatible = "zmk,behavior-mod-morph";
-            label = "VIM_C_R";
-            #binding-cells = <0>;
-            bindings = <&none>, <&kp LG(LS(Z))>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
-        vim_backspace: vim_backspace {
-            compatible = "zmk,behavior-mod-morph";
-            label = "VIM_BACKSPACE";
-            bindings = <&kp LA(BACKSPACE)>, <&kp LA(DELETE)>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        slashandbackslash: slashandbackslash {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SLASHANDBACKSLASH";
-            bindings = <&kp SLASH>, <&kp BACKSLASH>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        quote: quote {
-            compatible = "zmk,behavior-mod-morph";
-            label = "QUOTE";
-            bindings = <&kp SINGLE_QUOTE>, <&kp GRAVE>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        coma_semi: coma_semi {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMA_SEMI";
-            bindings = <&kp COMMA>, <&kp SEMI>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        dot_colon: dot_colon {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DOT_COLON";
-            bindings = <&kp PERIOD>, <&kp COLON>, <&kp LA(COLON)>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        q_grave: q_grave {
-            compatible = "zmk,behavior-mod-morph";
-            label = "Q_GRAVE";
-            bindings = <&kp Q>, <&kp GRAVE>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        home: home {
-            compatible = "zmk,behavior-mod-morph";
-            label = "HOME";
-            bindings = <&kp LG(LEFT)>, <&kp HOME>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        end: end {
-            compatible = "zmk,behavior-mod-morph";
-            label = "END";
-            bindings = <&kp LG(RIGHT)>, <&kp END>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RALT)>;
-        };
-
-        quote_grave: quote_grave {
-            compatible = "zmk,behavior-mod-morph";
-            label = "QUOTE_GRAVE";
-            bindings = <&kp SINGLE_QUOTE>, <&kp GRAVE>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        hm_quotes: hm_quotes {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HM_QUOTES";
-            bindings = <&kp>, <&quote_grave>;
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
-        dot_comma: dot_comma {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DOT_COMMA";
-            bindings = <&kp DOT>, <&kp COMMA>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        multiply: multiply {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MULTIPLY";
-            bindings = <&kp ASTERISK>, <&kp LEFT_BRACE>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        divide: divide {
-            compatible = "zmk,behavior-mod-morph";
-            label = "divide";
-            bindings = <&kp SLASH>, <&kp LEFT_PARENTHESIS>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        num_7: num_7 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "num_7";
-            bindings = <&kp N7>, <&kp RIGHT_BRACE>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        equals_thic_arrow: equals_thic_arrow {
-            compatible = "zmk,behavior-mod-morph";
-            label = "EQUALS_THIC_ARROW";
-            bindings = <&kp EQUAL>, <&thic_arrow>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        num_0: num_0 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "NUM_0";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N0>, <&kp LEFT_BRACKET>;
-        };
-
-        num_1: num_1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "NUM_1";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N1>, <&kp RIGHT_BRACKET>;
-        };
-
-        num_2: num_2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "NUM_2";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N2>, <&kp COMMA>;
-        };
-
-        num_3: num_3 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "NUM_3";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&kp N3>, <&kp DOT>;
         };
 
         num_5: num_5 {
@@ -210,7 +30,7 @@
             label = "NUM_5";
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
-            bindings = <&hm RIGHT_GUI N5>, <&kp LT>;
+            bindings = <&hm RIGHT_GUI N5>, <&kp LESS_THAN>;
         };
 
         num_6: num_6 {
@@ -218,233 +38,7 @@
             label = "NUM_6";
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
-            bindings = <&hm RIGHT_ALT NUMBER_6>, <&kp GT>;
-        };
-
-        hm_quote_minus: hm_quote_minus {
-            compatible = "zmk,behavior-mod-morph";
-            label = "HM_QUOTE_MINUS";
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-            bindings = <&hm RCTRL MINUS>, <&kp DOUBLE_QUOTES>;
-        };
-
-        num_4: num_4 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "NUM_4";
-            bindings = <&hm RIGHT_SHIFT N4>, <&kp RIGHT_PARENTHESIS>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        always_tilde: always_tilde {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALWAYS_TILDE";
-            bindings = <&kp LA(N)>, <&kp LA(N)>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        num_8: num_8 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "NUM_8";
-            bindings = <&kp N8>, <&kp LA(LS(NUMBER_2))>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        w_euro: w_euro {
-            compatible = "zmk,behavior-mod-morph";
-            label = "W_EURO";
-            bindings = <&kp W>, <&kp LS(LA(NUMBER_2))>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        a_grave_ctrl: a_grave_ctrl {
-            compatible = "zmk,behavior-mod-morph";
-            label = "A_GRAVE_CTRL";
-            bindings = <&hm LCTRL A>, <&kp A>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        always_grave: always_grave {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALWAYS_GRAVE";
-            bindings = <&kp GRAVE>, <&kp GRAVE>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        always_acute: always_acute {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALWAYS_ACUTE";
-            bindings = <&kp LA(E)>, <&kp LA(E)>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_LSFT|MOD_RSFT)>;
-        };
-
-        always_circ: always_circ {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALWAYS_CIRC";
-            bindings = <&kp LA(I)>, <&kp LA(I)>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        cmd_num_4: cmd_num_4 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_NUM_4";
-            bindings = <&num_4>, <&kp NUMBER_4>;
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_RGUI|MOD_LGUI)>;
-        };
-
-        cmd_num_5: cmd_num_5 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_NUM_5";
-            bindings = <&num_5>, <&kp N5>;
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_RGUI|MOD_LGUI)>;
-        };
-
-        cmd_num_1: cmd_num_1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_NUM_1";
-            bindings = <&num_1>, <&kp NUMBER_1>;
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_RGUI|MOD_LGUI)>;
-        };
-
-        cmd_num_3: cmd_num_3 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_NUM_3";
-            bindings = <&num_3>, <&kp NUMBER_3>;
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_RGUI|MOD_LGUI)>;
-        };
-
-        cmd_num_2: cmd_num_2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_NUM_2";
-            bindings = <&num_2>, <&kp NUMBER_2>;
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_RGUI|MOD_LGUI)>;
-        };
-
-        cmd_num_6: cmd_num_6 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_NUM_6";
-            bindings = <&num_6>, <&kp NUMBER_6>;
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_RGUI|MOD_LGUI)>;
-        };
-
-        cmd_num_7: cmd_num_7 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_NUM_7";
-            bindings = <&num_7>, <&kp N7>;
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_RGUI|MOD_LGUI)>;
-        };
-
-        cmd_num_8: cmd_num_8 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_NUM_8";
-            bindings = <&num_8>, <&kp N8>;
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_RGUI|MOD_LGUI)>;
-        };
-
-        cmd_w_euro: cmd_w_euro {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_W_EURO";
-            bindings = <&w_euro>, <&kp W>;
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_LSFT|MOD_RCTL|MOD_RSFT)>;
-            keep-mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RALT|MOD_RGUI|MOD_RSFT|MOD_RCTL)>;
-        };
-
-        shift_tap: shift_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SHIFT_TAP";
-            bindings = <&kp>, <&kp>;
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <200>;
-        };
-
-        plus_gte: plus_gte {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PLUS_GTE";
-            bindings = <&kp PLUS>, <&gte>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        minus_lte: minus_lte {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MINUS_LTE";
-            bindings = <&kp MINUS>, <&lte>;
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        p_question: p_question {
-            compatible = "zmk,behavior-mod-morph";
-            label = "P_QUESTION";
-            bindings = <&kp P>, <&kp QUESTION>;
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        switch_layout: switch_layout {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SWITCH_LAYOUT";
-            #binding-cells = <0>;
-            bindings = <&to 1>, <&to 0>;
-        };
-
-        fn_tab: fn_tab {
-            compatible = "zmk,behavior-hold-tap";
-            label = "FN_TAB";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            flavor = "hold-preferred";
-            bindings = <&kp TAB>, <&mo fn>;
-        };
-    };
-
-    macros {
-        // ...sin cambios...
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        RESET {
-            bindings = <&esc_0>;
-            key-positions = <12 17>;
-        };
-
-        toggle_shift {
-            bindings = <&caps_word>;
-            key-positions = <16 13>;
-        };
-
-        RESET_w {
-            bindings = <&esc_0>;
-            key-positions = <14 15>;
+            bindings = <&hm RIGHT_ALT N6>, <&kp GREATER_THAN>;
         };
     };
 
@@ -452,14 +46,14 @@
         compatible = "zmk,keymap";
 
         /* ─────────────────────────────────────────────
-         * BASE LAYER
+         * BASE
          *
          * Q  W  E  R  T      Y  U  I  O  P
          * A  S  D  F  G      H  J  K  L  ;
          * Z  X  C  V  B      N  M  ,  .  /
          *
-         * TAB (FN) CTRL SPACE     ENTER DEL SHIFT
-         *        (LOWER)     (RAISE)
+         * TAB CTRL SPACE    ENTER DEL SHIFT
+         *      LOWER       RAISE
          * ─────────────────────────────────────────────
          */
         base {
@@ -469,7 +63,7 @@
  &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K &kp L &kp SEMI
  &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp SLASH
 
-             &fn_tab &kp LCTRL &lt lower &kp SPACE   &lt raise &kp ENTER &kp DEL &kp RSHFT
+                &kp TAB &kp LCTRL &lt lower &kp SPACE   &lt raise &kp ENTER &kp DEL &kp RSHFT
             >;
         };
 
@@ -477,51 +71,28 @@
          * LOWER – símbolos / números
          */
         lower {
-    label = "LOWER";
-    bindings = <
- &kp EXCL &kp AT &kp HASH &kp DOLLAR &kp PRCNT      &kp CARET &kp AMPS &kp ASTERISK &kp LPAR &kp RPAR
- &kp N1   &kp N2 &kp N3   &kp N4     &kp N5         &kp N6    &kp N7   &kp N8        &kp N9   &kp N0
+            label = "LOWER";
+            bindings = <
+ &kp EXCL &kp AT &kp HASH &kp DOLLAR &kp PERCENT      &kp CARET &kp AMPS &kp ASTERISK &kp LPAR &kp RPAR
+ &kp N1   &kp N2 &kp N3   &kp N4     &kp N5           &kp N6    &kp N7   &kp N8        &kp N9   &kp N0
  &kp EQUAL &kp MINUS &kp PLUS &kp LEFT_BRACE &kp RIGHT_BRACE   &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LESS_THAN &kp GREATER_THAN &kp BACKSLASH
 
-        &trans &trans &trans &trans &trans &trans
-    >;
-};
+                    &trans &trans &trans &trans &trans &trans
+            >;
+        };
 
         /* ─────────────────────────────────────────────
-         * RAISE – navegación / ratón (layout visual)
+         * RAISE – navegación / mouse
          */
         raise {
-    label = "RAISE";
+            label = "RAISE";
 
-/* ┌───────────────┐        ┌───────────────┐
- * │ ESC  ↑  TAB   │        │ LCLK RCLK MCLK│
- * │ ←   ↓   →     │        │ ←   ↑   →     │
- * │ UNDO CUT COPY │        │       ↓       │
- * └───────────────┘        └───────────────┘
- */
-
-    bindings = <
+            bindings = <
  &kp ESC   &kp UP    &kp TAB   &trans &trans      &trans      &mkp LCLK &mkp RCLK &mkp MCLK &trans
  &kp LEFT  &kp DOWN  &kp RIGHT &trans &trans      &trans      &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_RIGHT &trans
  &kp LC(Z) &kp LC(X) &kp LC(C) &trans &trans      &trans      &trans          &mmv MOVE_DOWN &trans &trans
 
- &trans &trans &trans     &trans &trans &trans
-    >;
-};
-
-
-        /* ─────────────────────────────────────────────
-         * FN – teclas de función F1-F12 y extras
-         * Incluye controles Bluetooth en la fila de thumbs
-         */
-        fn {
-            label = "FN";
-            bindings = <
- &kp F1   &kp F2   &kp F3   &kp F4   &kp F5        &kp F6   &kp F7   &kp F8   &kp F9   &kp F10
- &kp F11  &kp F12  &kp INS  &kp PSCR &kp SLCK      &kp PAUS &kp HOME &kp PG_UP &kp END &kp DEL
- &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp LCTRL &kp LALT
-
- &trans &trans &trans &trans &trans &trans
+                    &trans &trans &trans &trans &trans &trans
             >;
         };
     };
