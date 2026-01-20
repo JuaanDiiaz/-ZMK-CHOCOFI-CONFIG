@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE  0
-#define FN    1
+#define FUNC  1
 #define LOWER 2
 #define RAISE 3
 
@@ -27,7 +27,7 @@
          * A S D F G     H J K L ;
          * Z X C V B     N M , . /
          *
-         * TAB(hold FN) CTRL SPACE(hold LOWER)
+         * TAB(hold FUNC) CTRL SPACE(hold LOWER)
          *            RAISE
          * ─────────────────────────────────────────────
          */
@@ -38,8 +38,8 @@
                 &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K &kp L &kp SEMI
                 &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp SLASH
 
-                &lt FN TAB      &kp LCTRL &lt LOWER SPACE
-                &mo RAISE      &kp ENTER &kp DEL     &kp RSHFT
+                &lt FUNC TAB    &kp LCTRL   &lt LOWER SPACE
+                &lp RAISE ENTER &kp DEL     &kp RSHFT
             >;
         };
 
@@ -47,7 +47,7 @@
          * FN – F-KEYS + BLUETOOTH
          */
         fn {
-            label = "FN";
+            label = "FUNC";
             bindings = <
                 &bt BT_CLR &kp F2  &kp F3  &kp F4  &kp F5        &bt BT_SEL 0 &bt BT_SEL 1 &trans &trans &trans
                 &kp F6     &kp F7  &kp F8  &kp F9  &kp F10       &bt BT_SEL 2 &trans        &trans &trans &trans
