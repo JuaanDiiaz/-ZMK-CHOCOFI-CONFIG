@@ -492,9 +492,9 @@
         raise {
             label = "RAISE";
             bindings = <
- &kp ESC   &kp UP    &kp TAB   &trans   &trans      &trans   &trans   &trans   &trans   &trans
- &kp LEFT  &kp DOWN  &kp RIGHT &trans   &trans      &trans   &kp MS_LEFT   &kp MS_UP   &kp MS_RIGHT   &trans
- &kp LC(Z) &kp LC(X) &kp LC(C) &trans   &trans      &trans   &trans   &kp MS_DOWN   &trans   &trans
+ &kp ESC  &kp UP    &kp TAB   &trans &trans      &trans      &kp MS_BTN1 &kp MS_BTN2 &kp MS_BTN3  &trans
+ &kp LEFT &kp DOWN  &kp RIGHT &trans &trans      &trans      &kp MS_LEFT &kp MS_UP   &kp MS_RIGHT &trans
+ &kp LC(Z) &kp LC(X) &kp LC(C) &trans &trans     &trans      &trans      &kp MS_DOWN &trans       &trans
 
  &trans &trans &trans &trans &trans &trans
             >;
