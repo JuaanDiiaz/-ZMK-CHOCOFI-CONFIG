@@ -28,8 +28,8 @@
                 &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K &kp L &kp SEMI
                 &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp SLASH
 
-                &lt FUNC TAB   &kp LCTRL   &lt LOWER SPACE
-                &lt RAISE ENTER &kp BSPC   &kp RSHFT
+                &lt FUNC  &kp TAB     &kp LCTRL   &lt LOWER &kp SPACE
+                &lt RAISE &kp ENTER   &kp BSPC    &kp RSHFT
             >;
         };
 
