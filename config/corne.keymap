@@ -96,9 +96,9 @@
              */
 
             bindings = <
-                &kp ESC   &kp UP    &kp TAB   &trans &trans      &mkp LCLK &trans        &mkp RCLK &trans &trans
-                &kp LEFT  &kp DOWN  &kp RIGHT &trans &trans      &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_RIGHT &trans &trans
-                &kp LC(Z) &kp LC(X) &kp LC(C) &trans &trans      &trans &mmv MOVE_DOWN &trans &trans &trans
+                &kp ESC   &kp UP    &kp TAB   &trans &trans      &trans &mkp LCLK &trans        &mkp RCLK &trans
+                &kp LEFT  &kp DOWN  &kp RIGHT &trans &trans      &trans &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_RIGHT &trans
+                &kp LC(Z) &kp LC(X) &kp LC(C) &trans &trans      &trans &trans &mmv MOVE_DOWN &trans &trans
 
                 &trans &trans &trans
                 &trans &trans &trans &trans &trans
