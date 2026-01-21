@@ -27,8 +27,9 @@
          * A S D F G     H J K L ;
          * Z X C V B     N M , . /
          *
-         * TAB(hold FUNC) CTRL SPACE(hold LOWER)
-         *            RAISE
+         * TAB  = hold FUNC
+         * SPACE = hold LOWER
+         * ENTER = hold RAISE
          * ─────────────────────────────────────────────
          */
         base {
@@ -38,20 +39,26 @@
                 &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K &kp L &kp SEMI
                 &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp SLASH
 
-                &lt FUNC TAB    &kp LCTRL   &lt LOWER SPACE
-                &lp RAISE ENTER &kp DEL     &kp RSHFT
+                &lt FUNC TAB   &kp LCTRL   &lt LOWER SPACE
+                &lt RAISE ENTER &kp DEL    &kp RSHFT
             >;
         };
 
         /* ─────────────────────────────────────────────
-         * FN – F-KEYS + BLUETOOTH
+         * FUNC – F KEYS + BLUETOOTH
+         * ─────────────────────────────────────────────
          */
         fn {
             label = "FUNC";
             bindings = <
-                &bt BT_CLR &kp F2  &kp F3  &kp F4  &kp F5        &bt BT_SEL 0 &bt BT_SEL 1 &trans &trans &trans
-                &kp F6     &kp F7  &kp F8  &kp F9  &kp F10       &bt BT_SEL 2 &trans        &trans &trans &trans
-                &kp F11    &kp F12 &trans  &trans  &trans       &trans        &trans        &trans &trans &trans
+                &bt BT_CLR  &kp F2   &kp F3   &kp F4   &kp F5
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans &trans
+
+                &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+                &trans  &trans  &trans  &trans  &trans
+
+                &kp F11 &kp F12 &trans &trans &trans
+                &trans  &trans  &trans &trans &trans
 
                 &trans &trans &trans
                 &trans &trans &trans &trans &trans
@@ -59,7 +66,8 @@
         };
 
         /* ─────────────────────────────────────────────
-         * LOWER – símbolos
+         * LOWER – SYMBOLS
+         * ─────────────────────────────────────────────
          */
         lower {
             label = "LOWER";
@@ -74,10 +82,19 @@
         };
 
         /* ─────────────────────────────────────────────
-         * RAISE – mouse (lado derecho)
+         * RAISE – NAV + MOUSE (RIGHT SIDE)
+         * ─────────────────────────────────────────────
          */
         raise {
             label = "RAISE";
+
+            /* ┌───────────────┐        ┌─────────────────────────┐
+             * │ ESC  ↑  TAB   │        │ LCLK      RCLK          │
+             * │ ←   ↓   →     │        │ MOVE ←  MOVE ↑  MOVE → │
+             * │ UNDO CUT COPY │        │        MOVE ↓          │
+             * └───────────────┘        └─────────────────────────┘
+             */
+
             bindings = <
                 &kp ESC   &kp UP    &kp TAB   &trans &trans      &mkp LCLK &trans        &mkp RCLK &trans &trans
                 &kp LEFT  &kp DOWN  &kp RIGHT &trans &trans      &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_RIGHT &trans &trans
